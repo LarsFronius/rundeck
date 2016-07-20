@@ -12,7 +12,7 @@
         }
         item.title=(exec?exec.executionState:report.status=='succeed'?'SUCCEEDED':'FAILED')
         if(report.jcExecId){
-            item.link=createLink(controller:'execution', action:'show',params:[id:report.jcExecId], absolute: true)
+            item.link=createLink(controller:'execution', action:'show',params:[id:report.jcExecId])
         }
         if(report.reportId){
             item.title+=": "+ report.reportId

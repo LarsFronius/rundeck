@@ -1186,11 +1186,11 @@ class ExecutionController extends ControllerBase{
      */
 
     public String createExecutionUrl(def id,def project) {
-        return g.createLink(controller: 'execution', action: 'follow', id: id, absolute: true,
+        return g.createLink(controller: 'execution', action: 'follow', id: id,
                 params: [project: project])
     }
     public String createServerUrl() {
-        return g.createLink(controller: 'menu', action: 'index', absolute: true)
+        return g.createLink(controller: 'menu', action: 'index')
     }
     /**
      * Render execution list xml given a List of executions, and a builder delegate
@@ -1199,7 +1199,7 @@ class ExecutionController extends ControllerBase{
         apiService.renderExecutionsXml(execlist.collect{ Execution e->
             [
                 execution:e,
-                href: grailsLinkGenerator.link(controller: 'execution', action: 'follow', id: e.id, absolute: true,
+                href: grailsLinkGenerator.link(controller: 'execution', action: 'follow', id: e.id,
                         params: [project: e.project]),
                 status: executionService.getExecutionState(e),
                 summary: executionService.summarizeJob(e.scheduledExecution, e)

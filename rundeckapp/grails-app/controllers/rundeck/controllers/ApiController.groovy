@@ -270,9 +270,9 @@ class ApiController extends ControllerBase{
         Date startupDate = new Date(nowDate.getTime()-durationTime)
         int threadActiveCount=Thread.activeCount()
         boolean executionModeActive=configurationService.executionModeActive
-        def metricsJsonUrl = createLink(uri: '/metrics/metrics?pretty=true',absolute: true)
-        def metricsThreadDumpUrl = createLink(uri: '/metrics/threads',absolute: true)
-        def metricsHealthcheckUrl = createLink(uri: '/metrics/healthcheck',absolute: true)
+        def metricsJsonUrl = createLink(uri: '/metrics/metrics?pretty=true')
+        def metricsThreadDumpUrl = createLink(uri: '/metrics/threads')
+        def metricsHealthcheckUrl = createLink(uri: '/metrics/healthcheck')
         if (request.api_version < ApiRequestFilters.V14 && !(response.format in ['all','xml'])) {
             return apiService.renderErrorXml(response,[
                     status:HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE,

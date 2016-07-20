@@ -2298,7 +2298,7 @@ class FrameworkController extends ControllerBase implements ApplicationContextAw
     }
 
     private def renderAclHref(String path) {
-        createLink(absolute: true, uri: "/api/${ApiRequestFilters.API_CURRENT_VERSION}/system/acl/$path")
+        createLink(uri: "/api/${ApiRequestFilters.API_CURRENT_VERSION}/system/acl/$path")
     }
     private def apiSystemAclsPutResource(String storagePath, boolean create) {
         def respFormat = apiService.extractResponseFormat(request, response, ['xml','json','yaml','text'],request.format)

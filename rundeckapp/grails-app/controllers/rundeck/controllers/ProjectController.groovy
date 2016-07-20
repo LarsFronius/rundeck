@@ -409,7 +409,7 @@ class ProjectController extends ControllerBase{
      * @return
      */
     private String generateProjectApiUrl(String projectName) {
-        g.createLink(absolute: true, uri: "/api/${ApiRequestFilters.API_CURRENT_VERSION}/project/${projectName}")
+        g.createLink(uri: "/api/${ApiRequestFilters.API_CURRENT_VERSION}/project/${projectName}")
     }
 
     /**
@@ -916,7 +916,7 @@ class ProjectController extends ControllerBase{
 
 
     private def renderProjectAclHref(String project,String path) {
-        createLink(absolute: true, uri: "/api/${ApiRequestFilters.API_CURRENT_VERSION}/project/$project/acl/$path")
+        createLink(uri: "/api/${ApiRequestFilters.API_CURRENT_VERSION}/project/$project/acl/$path")
     }
 
     /**

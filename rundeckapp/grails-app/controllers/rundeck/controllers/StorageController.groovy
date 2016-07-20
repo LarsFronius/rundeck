@@ -52,7 +52,7 @@ class StorageController extends ControllerBase{
         if ("${path}".startsWith('keys/') || path.toString() == 'keys') {
             uriString = "/api/${ApiRequestFilters.API_CURRENT_VERSION}/storage/$path"
         }
-        return createLink(absolute: true, uri: uriString)
+        return createLink(uri: uriString)
     }
     private def jsonRenderResource(builder, Resource res, dirlist=[]){
         builder.with{
